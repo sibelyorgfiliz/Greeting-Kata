@@ -38,7 +38,7 @@ public class GreetingKata {
             if (name[i].equals(name[i].toUpperCase())) {
                 flag_Upper = true;
                 if (i == name.length - 1) {
-                    UPPERgreetingNames = UPPERgreetingNames + ", " + name[i];
+                    UPPERgreetingNames = UPPERgreetingNames + " " + name[i];
                 } else if (flag_Lower==true) {
                     UPPERgreetingNames = UPPERgreetingNames  + " "+ name[i];
                     } else {

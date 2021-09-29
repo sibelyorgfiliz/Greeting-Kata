@@ -29,15 +29,15 @@ public class GreetingKataTest {
     }
 
     @Test
-    void HelloNul(){
+    void HelloUppercase(){
         //given
-        String usersText="";
+        String usersText="JERRY";
 
         //when
-        String actual = GreetingKata.stringnameToArrayname("");
+        String actual = GreetingKata.stringnameToArrayname(usersText);
 
         //then
-        assertEquals("Hello, my friend.",actual);
+        assertEquals("HELLO JERRY!",actual);
     }
 
 }
