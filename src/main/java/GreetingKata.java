@@ -5,21 +5,28 @@ import java.util.Scanner;
 public class GreetingKata {
 
     public static void main(String[] args) {
-        String[] name;
+
+
+        String usersText;
         Scanner scan = new Scanner(System.in);
         System.out.print("Write your name please : ");
-        String usersText = scan.nextLine();
-
-        if (usersText.isEmpty()) {
-            System.out.println("Hello, my friend.");
-        } else {
-            usersText = usersText.replace("\"", " ");
-            usersText = usersText.replace(",", " ");
-            name = usersText.split(" ");
-
-            System.out.println(greet(name));
-        }
+        usersText = scan.nextLine();
+        System.out.println(stringnameToArrayname(usersText));
     }
+        public static String stringnameToArrayname (String usersText){
+            String[] name;
+            if (usersText.isEmpty()) {
+                //System.out.println("Hello, my friend.");
+                return "Hello, my friend.";
+            } else {
+                usersText = usersText.replace("\"", " ");
+                usersText = usersText.replace(",", " ");
+                name = usersText.split(" ");
+                //System.out.println(greet(name));
+                return greet(name);
+            }
+        }
+
     //"greet" method
     public static String greet(String[] name) {
         String greetingNames = "";
