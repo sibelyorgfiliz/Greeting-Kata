@@ -10,10 +10,34 @@ public class GreetingKataTest {
         String usersText="Bob";
 
         //when
-        String actual = GreetingKata.stringnameToArrayname("Bob");
+        String actual = GreetingKata.stringnameToArrayname(usersText);
 
         //then
         assertEquals("Hello, Bob.",actual);
+    }
+
+    @Test
+    void HelloNull(){
+        //given
+        String usersText="";
+
+        //when
+        String actual = GreetingKata.stringnameToArrayname(usersText);
+
+        //then
+        assertEquals("Hello, my friend.",actual);
+    }
+
+    @Test
+    void HelloNul(){
+        //given
+        String usersText="";
+
+        //when
+        String actual = GreetingKata.stringnameToArrayname("");
+
+        //then
+        assertEquals("Hello, my friend.",actual);
     }
 
 }
