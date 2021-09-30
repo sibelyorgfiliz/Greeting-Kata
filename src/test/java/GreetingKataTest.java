@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class GreetingKataTest {
 
-    @Test
+    @Test //1
     void shouldHelloName(){
         //given
         String usersText="Bob";
@@ -16,7 +16,7 @@ public class GreetingKataTest {
         assertEquals("Hello, Bob.",actual);
     }
 
-    @Test
+    @Test //2
     void HelloNull(){
         //given
         String usersText="";
@@ -28,7 +28,7 @@ public class GreetingKataTest {
         assertEquals("Hello, my friend.",actual);
     }
 
-    @Test
+    @Test //3
     void HelloUppercase(){
         //given
         String usersText="JERRY";
@@ -38,6 +38,42 @@ public class GreetingKataTest {
 
         //then
         assertEquals("HELLO JERRY!",actual);
+    }
+
+    @Test //4
+    void Hello2Lowercase(){
+        //given
+        String usersText="Jill,Jane";
+
+        //when
+        String actual = GreetingKata.stringnameToArrayname(usersText);
+
+        //then
+        assertEquals("Hello, Jill and Jane.",actual);
+    }
+
+    @Test //5
+    void Hello3Lowercase(){
+        //given
+        String usersText="Amy,Brian,Charlotte";
+
+        //when
+        String actual = GreetingKata.stringnameToArrayname(usersText);
+
+        //then
+        assertEquals("Hello, Amy, Brian, and Charlotte.",actual);
+    }
+
+    @Test //6
+    void Hello2Lower1Upper(){
+        //given
+        String usersText="Amy,BRIAN,Charlotte";
+
+        //when
+        String actual = GreetingKata.stringnameToArrayname(usersText);
+
+        //then
+        assertEquals("Hello, Amy and Charlotte. AND HELLO BRIAN!",actual);
     }
 
 }

@@ -21,6 +21,7 @@ public class GreetingKata {
             } else {
                 usersText = usersText.replace("\"", " ");
                 usersText = usersText.replace(",", " ");
+                usersText = usersText.replace("  ", " ");
                 name = usersText.split(" ");
                 //System.out.println(greet(name));
                 return greet(name);
@@ -37,7 +38,7 @@ public class GreetingKata {
         for (int i = 0; i <= name.length - 1; i++) {
             if (name[i].equals(name[i].toUpperCase())) {
                 flag_Upper = true;
-                if (i == name.length - 1) {
+                if ((i == name.length - 1)) {
                     UPPERgreetingNames = UPPERgreetingNames + " " + name[i];
                 } else if (flag_Lower==true) {
                     UPPERgreetingNames = UPPERgreetingNames  + " "+ name[i];
@@ -46,13 +47,18 @@ public class GreetingKata {
                     }
             } else {
                 flag_Lower = true;
-                if (i == name.length - 1) {
+                if (!(i == name.length - 1)) {
                     greetingNames = greetingNames +", "+name[i];
                 } else if (flag_Upper==true) {
-                    greetingNames = greetingNames  + " "+name[i];
-                    } else {
+                    greetingNames = greetingNames  + " and "+name[i];
+                    } else if (name.length==3){
+                    greetingNames = greetingNames + ", and " + name[i];
+                    } else if (name.length==2){
                     greetingNames = greetingNames + " and " + name[i];
-                    }
+                } else {
+                    greetingNames = greetingNames +", "+name[i];
+                }
+
             }
         }
         //return part
