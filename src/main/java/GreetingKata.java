@@ -61,7 +61,7 @@ public class GreetingKata {
                 } else {
                     greetingNames = greetingNames +", "+name.get(i);
                 }
-
+                greetingNames=greetingNames.replace("\"","");
             }
         }
         //return part

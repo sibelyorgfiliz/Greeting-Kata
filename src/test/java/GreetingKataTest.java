@@ -88,4 +88,31 @@ public class GreetingKataTest {
         //then
         assertEquals("Hello, Amy and Charlotte. AND HELLO BRIAN!",actual);
     }
+
+    @Test //7
+    void Hello3Lower(){
+        //given
+        //String usersText="Amy,BRIAN,Charlotte";
+        List<String> name = new ArrayList<>();
+        name.add("Bob");
+        name.add("Charlie, Dianne");
+        //when
+        String actual = GreetingKata.greet(name);
+        //then
+        assertEquals("Hello, Bob, Charlie, and Dianne.",actual);
+    }
+
+    @Test //8
+    void Hello3Metquote(){
+        //given
+        //String usersText="Amy,BRIAN,Charlotte";
+        List<String> name = new ArrayList<>();
+        name.add("Bob");
+        name.add("\"Charlie, Dianne\"");
+        //when
+        String actual = GreetingKata.greet(name);
+        //then
+        assertEquals("Hello, Bob and Charlie, Dianne.",actual);
+    }
+
 }
