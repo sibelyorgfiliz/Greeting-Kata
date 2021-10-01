@@ -50,6 +50,15 @@ public class GreetingKata {
                 }
             } else {
                 flag_Lower = true;
+/*
+                if (name.get(i).contains(",")){
+                    greetingNames=greetingNames+", "+name.get(i);
+                    int fullSize=greetingNames.length();
+                    int fromIndex=name.size();
+
+                    //greetingNames= greetingNames.replace(greetingNames.substring(greetingNames.lastIndexOf(", ",(fullSize-fromIndex+3)),(greetingNames.lastIndexOf(", ",(fullSize-fromIndex+3))+2)),", and ");
+                } else
+*/
                 if (!(i == name.size() - 1)) {
                     greetingNames = greetingNames +", "+name.get(i);
                 } else if (flag_Upper==true) {
@@ -57,6 +66,13 @@ public class GreetingKata {
                 } else if (name.size()==3){
                     greetingNames = greetingNames + ", and " + name.get(i);
                 } else if (name.size()==2){
+ /////
+                    if (name.get(i).contains(", ") && !name.get(i).contains("\"")){
+                    String temp=name.get(i);
+                    temp=temp.replace(", ",", and ");
+                    greetingNames=greetingNames+=", "+temp;
+                    } else
+    /////
                     greetingNames = greetingNames + " and " + name.get(i);
                 } else {
                     greetingNames = greetingNames +", "+name.get(i);
